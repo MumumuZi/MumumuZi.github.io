@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+<meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
+<meta property="og:type" content="website">
+<meta property="og:title" content="&#39;about&#39;">
+<meta property="og:url" content="http://blog.fens.me/about/index.html">
+<meta property="og:site_name" content="mumu&#39;s blog">
+<meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-06T14:12:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;about&#39;">
+<meta name="twitter:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.fens.me/about/">
+
+
+
+
+
+  <title>信息安全之加解密 | mumu's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/MumumuZi" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mumu's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">new beginning</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.fens.me/2019/05/06/信息安全之加解密/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">信息安全之加解密</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T09:57:53+08:00">2019-05-06</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>加密技术是常用的安全保密手段，利用技术手段把重要的数据变为乱码（加密）传送，到达目的地后再用相同或不同的手段还原（解密）。</p>
+<a id="more"></a>
+<h1 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h1><p>培根密码类似于二进制编码，5个一组表示26个大写字母。培根密码实际上就是一种替换密码根据所给表一一对应转换即可加密解密。</p>
+<p>0 A aaaaa<br>1 B aaaab<br>2 C aaaba<br>3 D aaabb<br>4 E aabaa<br>5 F aabab<br>6 G aabba<br>7 H aabbb<br>8 I abaaa<br>9 J abaab<br>10 K ababa<br>11 L ababb<br>12 M abbaa<br>13 N abbab<br>14 O abbba<br>15 P abbbb<br>16 Q baaaa<br>17 R baaab<br>18 S baaba<br>19 T baabb<br>20 U babaa<br>21 V babab<br>22 W babba<br>23 X babbb<br>24 Y bbaaa<br>25 Z bbaab</p>
+<p>题目：woUld you prEfeR SausaGes or bacoN  wiTH YouR EgG?</p>
+<p>特征：有大写有小写，猜测大小写各代表两种状态，用a,b表示；</p>
+<p>解密方式：小写是a，大写是b，根据培根密码的特征吗，去掉空格5个一组，翻译为</p>
+<p>aabaa aaaaa baabb aaaab aaaaa aaaba abbba abbab</p>
+<p>根据培根密码表翻译为：EATBACON</p>
+<h1 id="Uuencode-rot13"><a href="#Uuencode-rot13" class="headerlink" title="Uuencode+rot13"></a>Uuencode+rot13</h1><p><strong>UUencode</strong>是一种二进制到文字的编码！它不是MIME编码中一员。最早在unix 邮件系统中使用，全称：Unix-to-Unix encoding。它也是定义了用可打印字符表示二进制文字一种方法，并不是一种新的编码集合。Uuencode将输入文本以每三个字节为单位进行编码，如果最后剩下的资料少于三个字节，不够的部份用零补齐。三个字节共有24个Bit，以6-bit为单位分为4个组，每个组以十进制来表示所出现的字节的数值。这个数值只会落在0到63之间。然后将每个数加上32，所产生的结果刚好落在ASCII字符集中可打印字符（32-空白…95-底线）的范围之中。跟Base64具有非常多的类似，也做了一些特殊转码说明！因为对所有文本都会编码一次可读性不是很好！！具体编码原理、算法可以查考<a href="http://blog.chacuo.net/753.html" target="_blank" rel="noopener">UUencode编码算法</a></p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546527912103.png" alt="01.png"></p>
+<p>答案格式KEY(…….)</p>
+<p>特征：每行都是以M开头，长度为61位，猜测为uuencode，对其进行解密，网址：<a href="http://web.chacuo.net/charsetuuencode" target="_blank" rel="noopener">http://web.chacuo.net/charsetuuencode</a> </p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546548781713.png" alt="02.png"></p>
+<p>提示的答案不是KEY开头，猜测答案可能进行了位移操作，这里是rot13，使用rot13解密。<a href="http://rot13.de/" target="_blank" rel="noopener">http://rot13.de/</a></p>
+<p><img src="http://61.182.254.18:9001/Public/course/ab3663f7-2f94-4f6e-a16d-d73d78bec006.jpg" alt="img"></p>
+<p>答案为：KEY{6a4bf9d431d5ea03d025c6d591d81dec}</p>
+<h1 id="混合编码"><a href="#混合编码" class="headerlink" title="混合编码"></a>混合编码</h1><p>工具：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">字符反转：http://www.5ixuexiwang.com/str/reverse.php</span><br><span class="line">html解码：https://c.runoob.com/front-end/691</span><br><span class="line">十六进制转字符串：http://www.bejson.com/convert/ox2str/</span><br><span class="line">base64解密：http://www.bejson.com/enc/base64/</span><br><span class="line">base64解密：http://www.bejson.com/enc/base64/</span><br></pre></td></tr></table></figure>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546727365639.png" alt="01.png"></p>
+<p>特征：非常像html编码，但是字符都是反序的，先进行字符反转：<a href="http://www.5ixuexiwang.com/str/reverse.php" target="_blank" rel="noopener">http://www.5ixuexiwang.com/str/reverse.php</a></p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546734335786.png" alt="02.png"></p>
+<p>Html解码：<a href="https://c.runoob.com/front-end/691" target="_blank" rel="noopener">https://c.runoob.com/front-end/691</a></p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546740832319.png" alt="03.png"></p>
+<p>所有字符都是0-9，A-F所以猜测为十六进制，将16进制转换为字符串。<a href="http://www.bejson.com/convert/ox2str/" target="_blank" rel="noopener">http://www.bejson.com/convert/ox2str/</a></p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546804688362.png" alt="04.png"></p>
+<p>字符后面有==，猜测为base64。<a href="http://www.bejson.com/enc/base64/" target="_blank" rel="noopener">http://www.bejson.com/enc/base64/</a></p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546815612928.png" alt="05.png"></p>
+<p>看到以S0VZ开头说明是KEY的base64,继续base64解码</p>
+<p><img src="http://61.182.254.18:9001/Public/course/e4874db9-e2df-4388-909c-dfb99e69c99c.jpg" alt="img"></p>
+<p>得到答案：KEY{zza3c08475dd1b7bc28be3644abfa64d21}</p>
+<h1 id="crc32加密"><a href="#crc32加密" class="headerlink" title="crc32加密"></a>crc32加密</h1><p>CRC检验原理实际上就是在一个p位二进制数据序列之后附加一个r位二进制检验码(序列)，从而构成一个总长为n＝p＋r位的二进制序列；附加在数据序列之后的这个检验码与数据序列的内容之间存在着某种特定的关系。如果因干扰等原因使数据序列中的某一位或某些位发生错误，这种特定关系就会被破坏。因此，通过检查这一关系，就可以实现对数据正确性的检验。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526546866413990.png" alt="01.png"></p>
+<p>特征：提示是生日的格式，看位数应该是yyyymmdd的格式，对其进行crc32解密，python代码如下：</p>
+<p><img src="/.me//Users\mumuzi\AppData\Roaming\Typora\typora-user-images\1557111593267.png" alt="1557111593267"></p>
+<p>答案为20190805</p>
+<h1 id="猪圈加密"><a href="#猪圈加密" class="headerlink" title="猪圈加密"></a>猪圈加密</h1><p>猪圈密码是一种以格子为基础的简单替换密码</p>
+<p>猪圈加密解码表如下：</p>
+<p><img src="http://61.182.254.18:9001/Public/course/9257d0c4-9f80-4ff4-8172-8c76e4072e26.jpg" alt="BINGOO"></p>
+<p>题目为：<img src="http://61.182.254.18:9001/Public/course/be5e35b3-b8cd-4af7-b98b-d55986a16d52.jpg" alt="img"></p>
+<p>对照上面解码表很容易得出密码为：ILOVEYOU （这是什么鬼土味情话😀）</p>
+<h1 id="凯撒加密"><a href="#凯撒加密" class="headerlink" title="凯撒加密"></a>凯撒加密</h1><p>在密码学中，恺撒密码是一种最简单且最广为人知的加密技术。它是一种替换加密的技术，明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行偏移后被替换成密文。例，当偏移量是3的时候，所有的字母A将被替换成D，B变成E，以此类推。这个加密方法是以恺撒的名字命名的，当年恺撒曾用此方法与其将军们进行联系。 恺撒密码通常被作为其他更复杂的加密方法中的一个步骤。恺撒密码还在现代的ROT13系统中被应用。但是和所有的利用字母表进行替换的加密技术一样，恺撒密码非常容易被破解，而且在实际应用中也无法保证通信安全。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526547107278420.png" alt="01.png"></p>
+<p>python代码如下：</p>
+<p><img src="/.me//Users\mumuzi\AppData\Roaming\Typora\typora-user-images\1557112454853.png" alt="1557112454853"></p>
+<p>或者通过网址<a href="http://ctf.ssleye.com/caesar.html" target="_blank" rel="noopener">http://ctf.ssleye.com/caesar.html</a>在线解密</p>
+<p>key为3时，即偏移量为3时密码中有flag字样，即为答案：aaactfthisisflagaaa</p>
+<h1 id="栅栏加密"><a href="#栅栏加密" class="headerlink" title="栅栏加密"></a>栅栏加密</h1><p>栅栏加密就是将明文按照顺序分成n组，然后将这n组，组合成一个密文。</p>
+<p>比如说以加密字符串“abcdefghijklm”为例</p>
+<p>分成3组，加密过程如下：</p>
+<p>adgjm</p>
+<p>behk</p>
+<p>cfil</p>
+<p>得到密文：adgjmbehkcfil</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526547398460358.png" alt="01.png"></p>
+<p>使用栅栏解密工具进行解密</p>
+<p><img src="http://61.182.254.18:9001/Public/course/cb17d20d-2d04-4ef6-8fa3-9e4d3618069a.jpg" alt="img"></p>
+<p>答案为：ictf</p>
+<h1 id="Base64编码"><a href="#Base64编码" class="headerlink" title="Base64编码"></a>Base64编码</h1><p>Base64编码是一种编码方式，通常用于把二进制数据编码为可写的字符形式的数据。是一种可逆的编码方式。编码后的数据是一个字符串，其中包含的字符为A-Z、a-z、0-9、+、/共64个字符。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526547564685774.png" alt="01.png"></p>
+<p>特征：看到题目猜测是base64编码，解码后发现还有一层base64，故再次进行解码，发现是多层base64,使用python进行循环解码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import base64,time</span><br><span class="line">a1=&quot;题目&quot;</span><br><span class="line">for i in range(0,10)</span><br><span class="line">   a1=base64.b64decode(a1)</span><br><span class="line">   print a1</span><br></pre></td></tr></table></figure>
+<p>结果中以ctf开头的即为答案。答案为：ctf{thisflag}</p>
+<h1 id="Rabbit加密"><a href="#Rabbit加密" class="headerlink" title="Rabbit加密"></a>Rabbit加密</h1><p>Rabbit流密码是由Cryptico公司（<a href="http://www.cryptico.com/）设计的，密钥长度128位，" target="_blank" rel="noopener">http://www.cryptico.com/）设计的，密钥长度128位，</a> 最大加密消息长度为264 Bytes，即16 TB，若消息超过该长度，则需要更换密钥对剩下的消息进行处理。它是目前安全性较高，加/解密速度比较高效的流密码之一。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Public/course/2ebb1b54-fcb7-4e6a-81bc-280373f74889.jpg" alt="img"></p>
+<p>特征：发现字符中有U2Fsd开头，猜测是rabbit加密，在线进行rabbit解密得到Y3Rme3RoaXNpc2ZsYWd9</p>
+<p>再用base64解码得到答案：ctf{thisisflag}</p>
+<h1 id="MD5加密"><a href="#MD5加密" class="headerlink" title="MD5加密"></a>MD5加密</h1><p>MD5的典型应用是对一段信息（Message）产生信息摘要（Message-Digest），以防止被篡改。比如，在UNIX下有很多软件在下载的时候都有一个文件名相同，文件扩展名为.md5的文件，在这个文件中通常只有一行文本，大致结构如： MD5 (tanajiya.tar.gz) = 0ca175b9c0f726a831d895e269332461 这就是tanajiya.tar.gz文件的数字签名。MD5将整个文件当作一个大文本信息，通过其不可逆的字符串变换算法，产生了这个唯一的MD5信息摘要。如果在以后传播这个文件的过程中，无论文件的内容发生了任何形式的改变（包括人为修改或者下载过程中线路不稳定引起的传输错误等），只要你对这个文件重新计算MD5时就会发现信息摘要不相同，由此可以确定你得到的只是一个不正确的文件。如果再有一个第三方的认证机构，用MD5还可以防止文件作者的 “抵赖”，这就是所谓的数字签名应用。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526547678551934.png" alt="01.png"></p>
+<p>特征：看到开头的e10ad就能联想到123456的md5加密，md5只有0-9，a-f，所以去掉多余字符进行解密：</p>
+<p>e10adc3949ba59abbe56e057f20f883e</p>
+<p>可以手动去掉也能通过代码去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">subject=&quot;待去除字符串&quot;</span><br><span class="line">regex=ur&quot;[0-9a-f]&quot;</span><br><span class="line">strs=&quot;&quot;</span><br><span class="line">for i in subject:</span><br><span class="line">   if re.search(regex,i):</span><br><span class="line">      strs+=i</span><br><span class="line">print strs</span><br></pre></td></tr></table></figure>
+<p>线上解密答案为：123456</p>
+<h1 id="UTF7编码"><a href="#UTF7编码" class="headerlink" title="UTF7编码"></a>UTF7编码</h1><p>UTF-7编码的规则及特点为：<br>1）UTF16小于等于 0x7F 的字符，采用ASCII编码；<br>2）UTF16大于0x7F的字符，采用Base64编码，然后在首尾分别加上+-；<br>3）UTF-7编码后，所有字符均小于等于 0x7F。<br>如字符串”A编码示例bC+123”的UTF-7编码为字符串”A+fxZ4AXk6T4s-bC+-123”。”+fxZ4AXk6T4s-“中的fxZ4AXk6T4s是”编码示例”的Base64编码；”+-“表示字符+；其余的保持不变。</p>
+<p>题目：</p>
+<p><img src="http://61.182.254.18:9001/Uploads/course/1526547876704427.png" alt="01.png"></p>
+<p>特点：看到以+开头，以-结尾，有可能是UTF7，进行UTF7解码</p>
+<p>答案：KEY{this is key}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/信息安全/" rel="tag"><i class="fa fa-tag"></i>信息安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/leetcode小萌新练级——两数之和/" rel="next" title="leetcode小萌新练级——两数之和">
+                <i class="fa fa-chevron-left"></i> leetcode小萌新练级——两数之和
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/29/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mumu</p>
+              <p class="site-description motion-element" itemprop="description">Chance favors the prepared mind.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#培根密码"><span class="nav-number">1.</span> <span class="nav-text">培根密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Uuencode-rot13"><span class="nav-number">2.</span> <span class="nav-text">Uuencode+rot13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#混合编码"><span class="nav-number">3.</span> <span class="nav-text">混合编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crc32加密"><span class="nav-number">4.</span> <span class="nav-text">crc32加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#猪圈加密"><span class="nav-number">5.</span> <span class="nav-text">猪圈加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#凯撒加密"><span class="nav-number">6.</span> <span class="nav-text">凯撒加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栅栏加密"><span class="nav-number">7.</span> <span class="nav-text">栅栏加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Base64编码"><span class="nav-number">8.</span> <span class="nav-text">Base64编码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rabbit加密"><span class="nav-number">9.</span> <span class="nav-text">Rabbit加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MD5加密"><span class="nav-number">10.</span> <span class="nav-text">MD5加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UTF7编码"><span class="nav-number">11.</span> <span class="nav-text">UTF7编码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mumu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

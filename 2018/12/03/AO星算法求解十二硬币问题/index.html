@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+<meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
+<meta property="og:type" content="website">
+<meta property="og:title" content="&#39;about&#39;">
+<meta property="og:url" content="http://blog.fens.me/about/index.html">
+<meta property="og:site_name" content="mumu&#39;s blog">
+<meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-06T14:12:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;about&#39;">
+<meta name="twitter:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.fens.me/about/">
+
+
+
+
+
+  <title>AO星算法求解十二硬币问题 | mumu's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/MumumuZi" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mumu's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">new beginning</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.fens.me/2018/12/03/AO星算法求解十二硬币问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AO星算法求解十二硬币问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T09:04:31+08:00">2018-12-03</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有12个硬币，已知有一个是不标准的(不能确定是轻还是重)，要求使用天平最多3次，找出那个不标准的硬币，并确定是轻的还是重的。<br><a id="more"></a></p>
+<h2 id="问题的表示"><a href="#问题的表示" class="headerlink" title="问题的表示"></a>问题的表示</h2><p>AO*算法是与/或图最佳优先搜索算法，用该算法求解问题需要三大要素：<br>（1）初始化问题描述；<br>（2）一组将问题变换成子问题的变换规则；<br>（3）一组本原问题描述。</p>
+<p>首先，每称一次后，新状态必须保留所剩的次数；其次，每称一次后，有关硬币的重量状态的变化也必须加以记载。为了对每称一次后得到的信息进行估计，将硬币的重量分为4种类型：<br>​        标准型（Standard）标记为S<br>​        轻标型（Light or Standard）标记为LS<br>​        重标型（Heavy or Standard）标记为HS<br>​        轻重标准型（Light or Heavy or Standard）标记为LHS</p>
+<p>综上所述，问题的状态可表示成一个五元组：（LHS，LS，HS，S，T），其中前四个元素表示当前这四种类型硬币的个数，T表示剩余的称硬币的次数。在这样的状态表示下，有：<br>初始状态：（12，0，0，0，3）<br>目标状态：Sg1：（0，1，0，11，0）和<br>​               Sg2：（0，0，1，11，0）<br>Sg1 、Sg2分别表示最后找到一个轻的或找到一个重的硬币，其余11个为标准硬币。</p>
+<h2 id="十二硬币问题的转换规则"><a href="#十二硬币问题的转换规则" class="headerlink" title="十二硬币问题的转换规则"></a>十二硬币问题的转换规则</h2><p>首先考虑如何取硬币的问题。</p>
+<p>设当前的状态为（lhs，ls，hs，s，t），用函数PICKUP=([lhs1,ls1,hs1,s1],[lhs2,ls2,hs2,s2])表示本次分别从（lhs，ls，hs，s，t）中取出了[lhs1,ls1,hs1,s1]代表的硬币数目放到天平的左边，取出了[lhs2,ls2,hs2,s2]代表的硬币数目放到天平的右边。</p>
+<p>对于PICKUP应默认有如下性质成立：<br>​    0&lt;lhs1+ls1+hs1+s1= lhs2+ls2+hs2+s2≤6 ，即天平两边的硬币数相等且大于0，小于等于6。<br>​    lhs1+lhs2 ≤lhs ∧ ls1+ls2 ≤ls ∧ hs1+hs2≤hs ∧ s1+s2 ≤s ，即取出的硬币数小于等于相应类型原有的硬币数。</p>
+<p>然后令 PICKUP（）等于-1，0，1 分别表示天平左倾、平衡和右倾。在这个定义下，有如下转换规则：</p>
+<h3 id="L规则（左倾规则）"><a href="#L规则（左倾规则）" class="headerlink" title="L规则（左倾规则）"></a>L规则（左倾规则）</h3><p>if  PICKUP([lhs1,ls1,hs1,s1], [lhs2,ls2,hs2,s2])    =-1 ∧ (lhs,ls,hs,s,t)<br>​    then  (lhs’,ls’,hs’,s’,t-1);</p>
+<p>其中</p>
+<ul>
+<li>s’=hs2+ls1+(lhs-lhs1-lhs2)+(ls-ls1-ls2)+(hs-hs1-hs2)+s；若天平左倾，则在左天平中状态为 LS 的硬币和在右天平中状态为 HS 的硬币和未放到天平上的硬币都是标准的硬币。</li>
+<li>ls’=ls2+lhs2;右天平原有ls2个轻标准型的硬币仍然为轻标准型，lhs2个轻重标准型硬币改变为轻标准型。</li>
+<li>hs’=lhs1+hs1;左天平原有的hs1个重标准型的硬币仍然为重标准型，左天平的lhs1个轻重标准型硬币改变为重标准型。</li>
+<li>lhs’=0；只要不平衡，就不存lhs型的硬币，所有的硬币都可以确定为LS,HS或S型，即lhs’=0。</li>
+</ul>
+<h3 id="R规则（右倾规则）"><a href="#R规则（右倾规则）" class="headerlink" title="R规则（右倾规则）"></a>R规则（右倾规则）</h3><p>if  PICKUP([lhs1,ls1,hs1,s1], [lhs2,ls2,hs2,s2])    =1 ∧ (lhs,ls,hs,s,t)<br>​    then  (lhs’,ls’,hs’,s’,t-1);</p>
+<p>其中</p>
+<ul>
+<li>s’=hs1+ls2+(lhs -lhs1-lhs2)+(ls-ls1-ls2)+(hs-hs1-hs2)+s；若天平右倾，则左天平上状态为HS 的硬币和在右天平上状态为LS 的硬币以及未放到天平上的硬币都是标准的硬币。</li>
+<li>ls’=ls1+lhs1;左天平原有的ls1个轻标准型的硬币不变，lhs1个轻重标准型改变为轻标准型。</li>
+<li>hs’=lhs2+hs2;右天平原有的hs2个重标准型的硬币也不变，lhs2个轻重标准型的硬币改变为重标准型。</li>
+<li>lhs’=0；因为不平衡，lhs’=0。</li>
+</ul>
+<h3 id="B规则（平衡规则）"><a href="#B规则（平衡规则）" class="headerlink" title="B规则（平衡规则）"></a>B规则（平衡规则）</h3><p>if  PICKUP([lhs1,ls1,hs1,s1], [lhs2,ls2,hs2,s2])    =0 ∧ (lhs,ls,hs,s,t)<br>​    then  (lhs’,ls’,hs’,s’,t+1);<br>其中，</p>
+<ul>
+<li>s’=s+ls1+ls2+hs1+hs2+lhs1+lhs2;若天平平衡，则所有在天平上的硬币都是标准的。</li>
+<li>ls’=ls-ls1-ls2;左、右天平原有轻标准型的硬币改变为标准型，所以从ls中减去ls1和ls2。</li>
+<li>hs’=hs-hs1-hs2;左、右天平原有的重标准型的硬币改变为标准型，所以也要从 hs 中减去hs1和hs2。</li>
+<li>lhs’=lhs-lhs1-lhs2；LHS型的硬币要减去左、右天平原有的轻重标准型的硬币，即lhs’=lhs-lhs1+lhs2。</li>
+</ul>
+<p>以上规则中t-1表示剩下的称重次数减少一次。</p>
+<h2 id="问题搜索"><a href="#问题搜索" class="headerlink" title="问题搜索"></a>问题搜索</h2><p>人工智能问题的求解往往转化为问题搜索。在该问题搜索中，PICKUP表示一种选取方法，不同的选取方法之间是或的关系，当选定一种PICKUP后，就必须考虑它的值为-1,0,1的情况下下层的节点都可解，则三种情况之间的关系为“与”的关系。这说明该问题的搜索图是与或图，所以采取的搜索算法是AO*算法。用于该算法的评价函数为：h((lhs,ls,hs,s,t))=ls+hs+lhs-1。<br>​    显然有：h((0,1,0,11,0))=0 和h((0,0,1,11,0))=0，即h(Sg1)=0,h(Sg2)=0 </p>
+<p>由于问题的本原问题对应的节点是可解节点，因此Sg1、Sg2为可解节点。不可解节点可定义为：如果节点n=(lhs,ls,hs,s,t)中t=0且(lhs,ls,hs,s)不属于{(0,1,0,11),(0,0,1,11)}，则n为不可解节点。做好上述准备工作后，就可用AO* 算法进行求解。</p>
+<p>用AO<em> 算法可以很快地接近目标，因为对于某种选法，它的下层节点层数不超过三层，且只要有一个下层节点为不可解节点，则马上推出它为不可解节点。例如：考虑PICKUP([6,0,0,0],[6,0,0,0])，它的值只可能是1或-1，它的下层节点实际只有一个为（0，6，6，0，2）的节点。对于它的下两层的节点的搜索可很快导出都是不可解节点。因而导出PICKUP([6,0,0,0],[6,0,0,0])不是一种正确的取法。同样的道理也可以很快导出PICKUP ([1,0,0,0],[1,0,0,0]) ，PICKUP ([2,0,0,0],[2,0,0,0]) 等取法都不是正确的取法。因为抛去了大量的不可解的分支，所以，用AO</em>算法可以很快地找出所有解。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AI/" rel="tag"><i class="fa fa-tag"></i>AI</a>
+          
+            <a href="/tags/AO/" rel="tag"><i class="fa fa-tag"></i>AO*</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/03/hexo设置备忘录/" rel="next" title="hexo设置备忘录">
+                <i class="fa fa-chevron-left"></i> hexo设置备忘录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/02/leetcode小萌新练级——两数之和/" rel="prev" title="leetcode小萌新练级——两数之和">
+                leetcode小萌新练级——两数之和 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mumu</p>
+              <p class="site-description motion-element" itemprop="description">Chance favors the prepared mind.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题的表示"><span class="nav-number">2.</span> <span class="nav-text">问题的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二硬币问题的转换规则"><span class="nav-number">3.</span> <span class="nav-text">十二硬币问题的转换规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L规则（左倾规则）"><span class="nav-number">3.1.</span> <span class="nav-text">L规则（左倾规则）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R规则（右倾规则）"><span class="nav-number">3.2.</span> <span class="nav-text">R规则（右倾规则）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B规则（平衡规则）"><span class="nav-number">3.3.</span> <span class="nav-text">B规则（平衡规则）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题搜索"><span class="nav-number">4.</span> <span class="nav-text">问题搜索</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mumu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
