@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="Chance favors the prepared mind.">
+<meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://blog.fens.me/tags/index.html">
+<meta property="og:title" content="&#39;about&#39;">
+<meta property="og:url" content="http://blog.fens.me/about/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
-<meta property="og:description" content="Chance favors the prepared mind.">
+<meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-24T12:49:54.000Z">
+<meta property="og:updated_time" content="2019-05-06T14:12:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="Chance favors the prepared mind.">
+<meta name="twitter:title" content="&#39;about&#39;">
+<meta name="twitter:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.fens.me/tags/">
+  <link rel="canonical" href="http://blog.fens.me/about/">
 
 
 
@@ -350,7 +350,7 @@
 <p>​        在搜索过程中只记录那些当前认为在所找路径上的节点和边。</p>
 <p>​        不回溯线式搜索：每到一个叉路口仅沿一条路继续前进，如果扩展到某个节点是目标节点，则搜索成功，否则失败。</p>
 <p>​         可回溯线式搜索：对每个节点都扩展一条边，当不能扩展时，则退回一个节点，再扩展另一条边。当回溯到初始节点还不是目标节点，则搜索失败。</p>
-<p><img src="/.me//1.png" alt="搜索分类"></p>
+<p><img src="/2018/11/25/人工智能复习自动推理/1.png" alt="搜索分类"></p>
 </li>
 </ul>
 <h3 id="二-问题表示方法"><a href="#二-问题表示方法" class="headerlink" title="二 问题表示方法"></a>二 问题表示方法</h3><p>状态空间法和问题规约法是人工智能中最基本的两种问题求解方法。 状态空间法需要扩展过多的节点，容易出现“组合爆炸”，因而只适合于比较简单的问题；问题规约法比状态空间法更有效的表示问题，状态空间法是问题规约法的特例。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </p>
@@ -378,9 +378,9 @@
 <p>与或图一般表示问题的变换过程，就是从原问题出发，运用某些规则不断的进行问题的分解（得到与分支）和变换（得到或分支），而得到一个与或图，与或图的节点一般代表问题，整个图就表示问题空间。</p>
 <p>与或图也是一个三元组（Q~0~，F，Q~n~），Q~0~表示初始问题，F表示问题变换规则集，Q~n~表示本原问题集。</p>
 <p>与树问题分解：</p>
-<p><img src="/.me//2.png" alt="与树问题分解"></p>
+<p><img src="/2018/11/25/人工智能复习自动推理/2.png" alt="与树问题分解"></p>
 <p>或树问题分解：</p>
-<p><img src="/.me//3.png" alt="或树问题分"></p>
+<p><img src="/2018/11/25/人工智能复习自动推理/3.png" alt="或树问题分"></p>
 <h3 id="三-搜索策略"><a href="#三-搜索策略" class="headerlink" title="三 搜索策略"></a>三 搜索策略</h3><h4 id="模拟退火算法"><a href="#模拟退火算法" class="headerlink" title="模拟退火算法"></a>模拟退火算法</h4><p>模拟退火是一种通用概率算法，用来在一定时间内找到很大搜索范围内的近似最优解。如何在搜索中实现退火？在这个阶段应该记住：需要退火算法在函数<em>f</em>产生了没有比当前状态更好的下一状态时，指出搜索的方向。这样，对所有可能的下一个合理状态计算<em>△E</em>值，并用下式计算<em>p’</em>值：<br>$$<br>p’=exp(-△E/T)<br>$$</p>
 <p>在闭区间[0,1]中随机得到一个数字，然后和<em>p‘</em>比较。如果<em>p’</em>大，则选择它作为下一个转换状态。参数T在搜索程序中是逐渐降低的。这时由于<em>T</em>降低，<em>p’</em>也降低，从而使算法终止在一个稳定的状态。算法表示如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Procedure Simulated Annealing</span><br><span class="line">确定可能的开始状态并测量他们和目标节点的距离（f），以f升序排列把这些节点压入栈（这句表述的歧义性很大呀，不要多想，就是在栈中f是升序排列的，也就是栈顶的f值最小）。</span><br><span class="line">Repeat  //开始循环</span><br><span class="line">      弹出栈顶元素N；</span><br><span class="line">      if N=目标节点 then 结束并返回</span><br><span class="line">      else do</span><br><span class="line">         产生栈顶元素N的所有子女并计算每个子女的f值</span><br><span class="line">         if 至少有一个子女的f值得到改善 then</span><br><span class="line">            以f升序排列把这些子女压入栈 //只压f值变好的</span><br><span class="line">         end if</span><br><span class="line">         if N的所有子女f值都没有变好 then</span><br><span class="line">            从其中随机选择一个，计算其p‘值并测量p&apos;是否超过在[0,1]中随机生成的数字</span><br><span class="line">            如果是，选择该状态为下一个状态；</span><br><span class="line">            如果不是，选择另外一个可选的合理的子女并且用这种方法进行检测；</span><br><span class="line">            直到选择了一个可以走动的后继状态，将该状态压入栈中。</span><br><span class="line">            细微的降低T，如果降低后为负的，则设为0;</span><br><span class="line">          end if</span><br><span class="line">      end if</span><br><span class="line"> until 栈为空</span><br><span class="line"> end</span><br></pre></td></tr></table></figure>
@@ -396,12 +396,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Procedure Graph Search</span><br><span class="line">  Begin</span><br><span class="line">     建立一个只含有初始节点S0的搜索图G，把S0放入OPEN表中；</span><br><span class="line">     计算f（s0）=g（s0）+h（s0）；</span><br><span class="line">     假定初始时CLOSED表为空；</span><br><span class="line">     while OPEN表不空 do</span><br><span class="line">         从OPEN表中取出f值最小的节点（第一个节点），并放入CLOSED表中；</span><br><span class="line">         假设该节点编号为n，</span><br><span class="line">         if n是目标节点，则停止，返回n，并根据n的反向指针指出从初始节点到n的路径</span><br><span class="line">         else do</span><br><span class="line">             扩展节点n；</span><br><span class="line">             if 节点n有后继节点 then</span><br><span class="line">                 （1）生成n的子节点集合&#123;mi&#125;，把mi作为n的后继节点加入G中，并计算f(mi)。</span><br><span class="line">                 （2）if mi未曾在G中出现过（未在OPEN表CLOSED表中出现过）then</span><br><span class="line">                      将它们配上刚计算的f值，设置返回到n的指针，并把它们放入OPEN表中。</span><br><span class="line">                 （3）if mi已经在OPEN表中，then</span><br><span class="line">                      该节点一定有多个父节点，在这种情况下，计算当前路径g值并和原有路径的g值比较：</span><br><span class="line">                      若前者大于后者，do nothing；否则，将OPEN表中该节点的f值更改为刚计算的f值，</span><br><span class="line">                      返回指针更改为n。</span><br><span class="line">                 （4）if mi已经在CLOSED表中，then</span><br><span class="line">                      该节点一样也有多个父节点，同样计算当前路径的g值和原来路径的g值。</span><br><span class="line">                      如果当前的g值小于原来的g值，则将表中该节点的g、f值及返回指针进行类似3）的修改。</span><br><span class="line">                      并要考虑修改表中通过该节点的后继节点的g、f值及其返回指针。</span><br><span class="line">                 （5）按f值从小到大的次序，对OPEN表中的节点进行重新排序。                            </span><br><span class="line">             end if</span><br><span class="line">         end if</span><br><span class="line">     end while</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
 <p>上述图搜索算法生成一个明确的图G（称为搜索图）和一个G的子集T（称为搜索树），图G中的每个节点也在树T上。搜索树是由返回指针确定的。</p>
 <p>算法（3）(4)步保证了对于每一个扩展的新节点，其返回指针的指向是已产生的路径中代价最小的。举个栗子：</p>
-<p><img src="/.me//A1.png" alt="A1"><img src="/.me//A2.png" alt="A2"></p>
+<p><img src="/2018/11/25/人工智能复习自动推理/A1.png" alt="A1"><img src="/2018/11/25/人工智能复习自动推理/A2.png" alt="A2"></p>
 <p>设搜索算法已生成如上图a所示 的搜索图和搜索树(带返回指针的部分)。图中实心圆点表示Closed表中的结点，空心圆点表示在Open表中的保护层的结点。左图是扩展结点1之前的搜索图的搜索树；而右图是扩展结点1之后的搜索图和搜索树。</p>
 <p>当结点1扩展时，产生结点2。而结点2是Closed表中的结点，但结点2的新g(2)值为2(设相邻两结点之间的代价均为1)，而原来g(2)值为4，故将结点2指向结点1，将原来指向结点3的指针断开。同时要考虑修改2的后继结点4的返回指针和g(4)值，将结点4指向结点2，并把原来指向b的指针断开。</p>
 <h4 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h4><p>在图搜索策略的基础上给出A<em>算法。定义评估函数<br>$$<br>f^</em>（n）=g^<em>（n）+h^</em>（n）<br>$$<br>g^<em>^(n)为起始节点到节点n的最短路径的代价，h</em>(n)是从n到目标节点最短路径的代价。</p>
 <p>g(n)是对g^<em>^(n)的估计，h(n)是对h^</em>^(n)的估计。若对任意n，满足g(n)&gt;0且h(n)&lt;=h^<em>^(n)，则称这样的算法为A^</em>^算法。伪代码如下：</p>
-<p><img src="/.me//ASTAR.png" alt="ASTAR"></p>
+<p><img src="/2018/11/25/人工智能复习自动推理/ASTAR.png" alt="ASTAR"></p>
 <h4 id="与或图启发式搜索之AO-算法"><a href="#与或图启发式搜索之AO-算法" class="headerlink" title="与或图启发式搜索之AO*算法"></a>与或图启发式搜索之AO*算法</h4><p> 在与或图上执行搜索过程，其目的在于表明初始节点是有解的，与或图中一个可解节点可递归地定义如下：</p>
 <p>1）叶节点是可解节点。</p>
 <p>2）如果某节点为或子节点，那么该节点可解当且仅当至少有一个子节点为可解节点。</p>
@@ -522,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/07/pandas数据处理/" rel="next" title="pandas数据处理">
-                <i class="fa fa-chevron-left"></i> pandas数据处理
+              <a href="/2018/11/25/人工智能复习第一章绪论/" rel="next" title="人工智能之第一章绪论">
+                <i class="fa fa-chevron-left"></i> 人工智能之第一章绪论
               </a>
             
           </div>
@@ -532,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/25/人工智能复习第一章绪论/" rel="prev" title="人工智能之第一章绪论">
-                人工智能之第一章绪论 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/25/重装系统or更换电脑后重新部署hexo/" rel="prev" title="重装系统or更换电脑后重新部署hexo">
+                重装系统or更换电脑后重新部署hexo <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
