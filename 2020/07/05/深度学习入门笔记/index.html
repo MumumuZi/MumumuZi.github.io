@@ -79,7 +79,7 @@
 <meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&#39;categories&#39;">
-<meta property="og:url" content="http://mumumuzi.github.io/blog/categories/index.html">
+<meta property="og:url" content="http://mumumuzi.github.io/categories/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
 <meta property="og:description" content="Chance favors the prepared mind.">
 <meta property="og:locale" content="zh-Hans">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://mumumuzi.github.io/blog/categories/">
+  <link rel="canonical" href="http://mumumuzi.github.io/categories/">
 
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/blog/blog/2020/07/05/深度学习入门笔记/">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/blog/2020/07/05/深度学习入门笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mumu">
@@ -330,9 +330,9 @@
         <p>看了百度的飞桨官网的深度学习入门教程，整理一下笔记，不记下来仿佛就没装进脑子里🧠。</p>
 <p>飞桨是百度开发的一个高效和可扩展的深度学习框架，同时支持动态图和静态图。飞桨提供强大的深度学习并行技术，可以同时支持稠密参数和稀疏参数的超大规模深度学习并行训练，支持千亿规模参数和数百个节点的高效并行训练（摘自邱锡鹏教授的《神经网络与深度学习》，详见<a href="https://www.paddlepaddle.org.cn/" target="_blank" rel="noopener">飞桨官网</a>）。</p>
 <h1 id="深度学习综述"><a href="#深度学习综述" class="headerlink" title="深度学习综述"></a>深度学习综述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>深度学习是机器学习的一个分支，是指一类<strong>问题</strong>以及解决这类问题的方法。首先深度学习是一个机器学习问题，指从有限样例中通过算法总结出一般性的规律，并可以应用到新的未知数据上。机器学习的本质是<strong>参数估计</strong>，在各种问题上，他们的学习目标都是拟合一个大公式。</p>
-<p><img src="/blog/blog/2020/07/05/深度学习入门笔记/1.png" alt="机器学习拟合大公式"></p>
+<p><img src="/blog/2020/07/05/深度学习入门笔记/1.png" alt="机器学习拟合大公式"></p>
 <p>相比于传统的机器学习算法，两者在理论结构上是一致的，即模型假设、评价函数和优化算法（也就是统计学习方法里说的模型、策略和算法呗）。根本差别在于复杂度的不同，深度学习采用的模型一般比较复杂，输入数据和输出目标之间的数据会经过多个线性或非线性的<strong>组件</strong>，每个组件都会对信息进行加工并且影响后续的组件。这里的组件也就是神经网络中的<strong>层</strong>。</p>
-<p><img src="/blog/blog/2020/07/05/深度学习入门笔记/2.png" alt="深度学习模型很复杂"></p>
+<p><img src="/blog/2020/07/05/深度学习入门笔记/2.png" alt="深度学习模型很复杂"></p>
 <h2 id="神经网络基本概念"><a href="#神经网络基本概念" class="headerlink" title="神经网络基本概念"></a>神经网络基本概念</h2><p>目前，深度学习采用的模型主要是神经网络模型，其主要原因是神经网络模型可以使用误差反向传播算法，从而可以比较好的解决贡献度分配问题。贡献度分配问题是指得到最终结果时不知道每一层的贡献是多少，只要是超过一层的神经网络都存在贡献度分配问题，因此超过一层的神经网络都可以看成深度学习模型（这是《神经网络与深度学习》里的说法，也有说超过三层的非线性神经网络都可以称为深度神经网络）。</p>
 <p>神经元：神经网络的每个节点，由两部分组成：</p>
 <ul>

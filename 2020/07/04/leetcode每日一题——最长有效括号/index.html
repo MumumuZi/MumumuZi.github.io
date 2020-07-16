@@ -79,7 +79,7 @@
 <meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&#39;categories&#39;">
-<meta property="og:url" content="http://mumumuzi.github.io/blog/categories/index.html">
+<meta property="og:url" content="http://mumumuzi.github.io/categories/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
 <meta property="og:description" content="Chance favors the prepared mind.">
 <meta property="og:locale" content="zh-Hans">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://mumumuzi.github.io/blog/categories/">
+  <link rel="canonical" href="http://mumumuzi.github.io/categories/">
 
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/blog/blog/2020/07/04/leetcode每日一题——最长有效括号/">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/blog/2020/07/04/leetcode每日一题——最长有效括号/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mumu">
@@ -342,7 +342,7 @@
 </li>
 <li><p>遇到右括号，先出栈表示匹配成功（会存在第一个符号就是右括号的情况，所以先入栈一个-1作为栈底元素）。<br> 如果栈为空，说明将栈底元素-1弹出了，该右括号其实没有被匹配，将其入栈作为新的栈底元素</p>
 <p>如果栈不为空，当前右括号的下标减去栈顶元素即为以该右括号为结尾的有效括号的长度，与最长有效括号长度比较进行更新即可。图解如下：<a href="https://leetcode-cn.com/problems/longest-valid-parentheses/solution/shou-hua-tu-jie-zhan-de-xiang-xi-si-lu-by-hyj8/" target="_blank" rel="noopener">图片出处</a></p>
-<p><img src="/blog/blog/2020/07/04/leetcode每日一题——最长有效括号/1.png" alt>例如，当遇见索引5的右括号时，栈顶元素2出栈，栈顶变为-1，此时的有效长度为5-（-1）=6，大于初始长度0，更新当前最大长度为6。</p>
+<p><img src="/blog/2020/07/04/leetcode每日一题——最长有效括号/1.png" alt>例如，当遇见索引5的右括号时，栈顶元素2出栈，栈顶变为-1，此时的有效长度为5-（-1）=6，大于初始长度0，更新当前最大长度为6。</p>
 <p>当遇到索引6的右括号时，栈顶元素-1出栈，此时栈为空，则6入栈为新的栈顶元素，这样当遇到8右括号时，长度为8-6=2&lt;6，不更新最大长度。</p>
 <p>以下为c语言的代码：</p>
 </li>
