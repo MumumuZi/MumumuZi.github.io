@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="Chance favors the prepared mind.">
+<meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
 <meta property="og:type" content="website">
-<meta property="og:title" content="&#39;categories&#39;">
-<meta property="og:url" content="http://mumumuzi.github.io/categories/index.html">
+<meta property="og:title" content="&#39;about&#39;">
+<meta property="og:url" content="http://mumumuzi.github.io/about/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
-<meta property="og:description" content="Chance favors the prepared mind.">
+<meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T01:38:15.000Z">
+<meta property="og:updated_time" content="2019-05-06T14:12:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;categories&#39;">
-<meta name="twitter:description" content="Chance favors the prepared mind.">
+<meta name="twitter:title" content="&#39;about&#39;">
+<meta name="twitter:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://mumumuzi.github.io/categories/">
+  <link rel="canonical" href="http://mumumuzi.github.io/about/">
 
 
 
@@ -334,11 +334,12 @@
 <h5 id="安装hexo-assert-image插件"><a href="#安装hexo-assert-image插件" class="headerlink" title="安装hexo-assert-image插件"></a>安装hexo-assert-image插件</h5><p>你需要安装一个图片路径转换的插件，这个插件名字是<strong>hexo-asset-image</strong>，使用如下命令安装插件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 <h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><p>首先把要插入的图片放到对应的资源文件夹中，然后进行路径引用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/人工智能复习之不确定推理/1.png)</span><br></pre></td></tr></table></figure>
-<p>可以使用Typora将图片直接拖进去再把路径改成上面那样的形式，\换成/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](人工智能复习之不确定推理/1.png)</span><br></pre></td></tr></table></figure>
+<p>可以使用Typora将图片直接拖进去再把路径改成上面那样的形式，\换成/。注意博客的名称和文件夹的名称一定要一致，否则会找不到图片路径导致无法显示。</p>
 <h1 id="设置背景图片"><a href="#设置背景图片" class="headerlink" title="设置背景图片"></a>设置背景图片</h1><p>将背景图片放入到<code>hexo/themes/next/source/images</code>，找到路径<code>hexo/themes/next/source/css/_custom/</code>下的<code>custom.styl</code>文件，并加入如下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">body&#123;   //页面背景</span><br><span class="line">        background:url(/images/background3.jpg);//图片路径，也可使用链接</span><br><span class="line">        background-size:cover;//图片显示大小</span><br><span class="line">        background-repeat:no-repeat;//如果图片不能全屏，是否平铺填充满屏幕</span><br><span class="line">        background-attachment:fixed;//背景是否随着网页上下滚动，fixed为固定</span><br><span class="line">        background-position:center;//图片位置</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<p>为了能看清背景图片，将博客主体设置为透明，在<code>costom.styl</code>文件中继续添加如下代码：</p>
+<p>然后，为了让图片能完全显示，将博客的主体部分以及开头和结尾菜单设置透明度，继续在<code>custom.syl</code>文件中添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.main-inner&#123;</span><br><span class="line">  margin-top:60px;</span><br><span class="line">  padding:60px 60px 60px 60px;</span><br><span class="line">  background:#fff;</span><br><span class="line">  opacity:0.8;</span><br><span class="line">  min-height:500px;</span><br><span class="line">&#125;</span><br><span class="line">.header&#123;</span><br><span class="line"> background:rgba(222 222 222,1) none repeat scroll !important;</span><br><span class="line">&#125;</span><br><span class="line">.footer&#123;</span><br><span class="line"> background:rgba(222 222 222,0.8) none repeat scroll !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -468,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -481,7 +482,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

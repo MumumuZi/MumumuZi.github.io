@@ -75,18 +75,18 @@
 
 
 
-<meta name="description" content="Chance favors the prepared mind.">
+<meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta name="keywords" content="Python 机器学习 计算机视觉 偶尔秀恩爱">
 <meta property="og:type" content="website">
-<meta property="og:title" content="&#39;categories&#39;">
-<meta property="og:url" content="http://mumumuzi.github.io/categories/index.html">
+<meta property="og:title" content="&#39;about&#39;">
+<meta property="og:url" content="http://mumumuzi.github.io/about/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
-<meta property="og:description" content="Chance favors the prepared mind.">
+<meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T01:38:15.000Z">
+<meta property="og:updated_time" content="2019-05-06T14:12:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;categories&#39;">
-<meta name="twitter:description" content="Chance favors the prepared mind.">
+<meta name="twitter:title" content="&#39;about&#39;">
+<meta name="twitter:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://mumumuzi.github.io/categories/">
+  <link rel="canonical" href="http://mumumuzi.github.io/about/">
 
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/01/卷积神经网络的感受野/">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/07/python面试问题总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mumu">
@@ -282,7 +282,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/07/01/卷积神经网络的感受野/" itemprop="url">卷积神经网络的感受野</a></h1>
+                <a class="post-title-link" href="/2020/07/07/python面试问题总结/" itemprop="url">python面试问题总结</a></h1>
         
 
         <div class="post-meta">
@@ -294,7 +294,557 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-01T16:17:24+08:00">2020-07-01</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-07T17:31:48+08:00">2020-07-07</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-python数据类型有哪些？"><a href="#1-python数据类型有哪些？" class="headerlink" title="1.python数据类型有哪些？"></a>1.python数据类型有哪些？</h1><p>python3中有六个标准的数据类型：</p>
+<ul>
+<li>Numbers（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Set（集合）</li>
+<li>Dictionary(字典)</li>
+</ul>
+<p>Python3的六个标准数据类型中：</p>
+<p><strong>不可变数据：</strong>数字、字符串、元组</p>
+<p><strong>可变数据：</strong>列表、字典、集合</p>
+<h1 id="2-python中哪些是可变对象哪些是不可变对象？"><a href="#2-python中哪些是可变对象哪些是不可变对象？" class="headerlink" title="2.python中哪些是可变对象哪些是不可变对象？"></a>2.python中哪些是可变对象哪些是不可变对象？</h1><p>首先，python中的一切传递都是引用（地址），无论是赋值还是函数调用，不存在值传递。</p>
+<p>python变量保存的是对象的引用，这个引用指向堆内存里的对象，在堆中分配的对象分为两类，一类是可变对象，一类是不可变对象。不可变对象的内容不可改变，保证了数据的不可修改，同时可以使得在多线程读取时不需要加锁。</p>
+<h3 id="不可变对象（变量指向的内存中的值不能够被改变）"><a href="#不可变对象（变量指向的内存中的值不能够被改变）" class="headerlink" title="不可变对象（变量指向的内存中的值不能够被改变）"></a>不可变对象（变量指向的内存中的值不能够被改变）</h3><p>当更改该对象时，由于所指向的内存中的值不可改变，所以会把原来的值复制到新的空间，然后变量指向这个新的地址。python中数值类型（int和float），布尔型bool，字符串str，元组tuple都是不可变对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 1</span><br><span class="line">print id(a)    # 40133000L，整数1放在了地址为40133000L的内存中，a变量指向这个地址。</span><br><span class="line">a += 1 </span><br><span class="line">print id(a)    # 40132976L，整数int不可改变，开辟新空间存放加1后的int，a指向这个新空间。</span><br></pre></td></tr></table></figure>
+<h3 id="可变对象（变量指向的内存中的值能够被改变）"><a href="#可变对象（变量指向的内存中的值能够被改变）" class="headerlink" title="可变对象（变量指向的内存中的值能够被改变）"></a>可变对象（变量指向的内存中的值能够被改变）</h3><p>当改变该对象时，所指向的内存中的值直接改变，没有发生复制行为。</p>
+<p>python中列表list，字典dict，集合set都是可变对象，自定义的类对象也是可变对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2,3]</span><br><span class="line">print id(a)    # 44186120L。</span><br><span class="line"></span><br><span class="line">a += [4,5]     # 相当于调用了a.extend([4,5])</span><br><span class="line">print id(a)    # 44186120L，列表list可改变，直接改变指向的内存中的值，没开辟新空间。</span><br><span class="line"></span><br><span class="line">a = a + [7,8]  # 直接+和+=并不等价，使用+来操作list时，得到的是新的list，不指向原空间。</span><br><span class="line">print id(a)    # 44210632L</span><br></pre></td></tr></table></figure>
+<h1 id="3-python与其他语言的区别？"><a href="#3-python与其他语言的区别？" class="headerlink" title="3.python与其他语言的区别？"></a>3.python与其他语言的区别？</h1><ol>
+<li>语言特点：简洁、优雅，省略了各种大括号和分号，还有一些关键字和类型说明</li>
+<li>python是解释性语言，也就是边解释边执行，相对立的为编译性语言，编译后再执行</li>
+<li>第三方库比较完备，python是开源的，应用领域很多，比如Web，运维，自动化测试，爬虫，数据分析，人工智能。</li>
+</ol>
+<h1 id="4-python中的深拷贝和浅拷贝的区别？"><a href="#4-python中的深拷贝和浅拷贝的区别？" class="headerlink" title="4.python中的深拷贝和浅拷贝的区别？"></a>4.python中的深拷贝和浅拷贝的区别？</h1><p><strong>直接赋值：</strong>其实就是对象的引用（别名）</p>
+<p>b=a:赋值引用，a和b都指向同一个对象。</p>
+<p><img src="/2020/07/07/python面试问题总结/1.png" alt></p>
+<p><strong>浅拷贝：</strong>拷贝父对象，不会拷贝对象的内部的子对象。</p>
+<p>b=a.copy():浅拷贝，a和b是一个独立的对象，但他们的子对象还是指向同一对象。</p>
+<p><img src="/2020/07/07/python面试问题总结/2.png" alt></p>
+<p><strong>深拷贝：</strong>copy模块的deepcopy方法，完全拷贝了父对象及其子对象。</p>
+<p>深拷贝需要引入copy模块，b=copy.deepcopy(a):深度拷贝，a和b完全拷贝了父对象及其子对象，两者是完全独立的。</p>
+<p><img src="/2020/07/07/python面试问题总结/3.png" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/05/深度学习入门笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/05/深度学习入门笔记/" itemprop="url">深度学习入门笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T15:42:33+08:00">2020-07-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>看了百度的飞桨官网的深度学习入门教程，整理一下笔记，不记下来仿佛就没装进脑子里🧠。</p>
+<p>飞桨是百度开发的一个高效和可扩展的深度学习框架，同时支持动态图和静态图。飞桨提供强大的深度学习并行技术，可以同时支持稠密参数和稀疏参数的超大规模深度学习并行训练，支持千亿规模参数和数百个节点的高效并行训练（摘自邱锡鹏教授的《神经网络与深度学习》，详见<a href="https://www.paddlepaddle.org.cn/" target="_blank" rel="noopener">飞桨官网</a>）。</p>
+<h1 id="深度学习综述"><a href="#深度学习综述" class="headerlink" title="深度学习综述"></a>深度学习综述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>深度学习是机器学习的一个分支，是指一类<strong>问题</strong>以及解决这类问题的方法。首先深度学习是一个机器学习问题，指从有限样例中通过算法总结出一般性的规律，并可以应用到新的未知数据上。机器学习的本质是<strong>参数估计</strong>，在各种问题上，他们的学习目标都是拟合一个大公式。</p>
+<p><img src="/2020/07/05/深度学习入门笔记/1.png" alt="机器学习拟合大公式"></p>
+<p>相比于传统的机器学习算法，两者在理论结构上是一致的，即模型假设、评价函数和优化算法（也就是统计学习方法里说的模型、策略和算法呗）。根本差别在于复杂度的不同，深度学习采用的模型一般比较复杂，输入数据和输出目标之间的数据会经过多个线性或非线性的<strong>组件</strong>，每个组件都会对信息进行加工并且影响后续的组件。这里的组件也就是神经网络中的<strong>层</strong>。</p>
+<p><img src="/2020/07/05/深度学习入门笔记/2.png" alt="深度学习模型很复杂"></p>
+<h2 id="神经网络基本概念"><a href="#神经网络基本概念" class="headerlink" title="神经网络基本概念"></a>神经网络基本概念</h2><p>目前，深度学习采用的模型主要是神经网络模型，其主要原因是神经网络模型可以使用误差反向传播算法，从而可以比较好的解决贡献度分配问题。贡献度分配问题是指得到最终结果时不知道每一层的贡献是多少，只要是超过一层的神经网络都存在贡献度分配问题，因此超过一层的神经网络都可以看成深度学习模型（这是《神经网络与深度学习》里的说法，也有说超过三层的非线性神经网络都可以称为深度神经网络）。</p>
+<p>神经元：神经网络的每个节点，由两部分组成：</p>
+<ul>
+<li>加权和：将所有的输入加权求和。</li>
+<li>激活函数：加权和的结果经过一个非线性函数变换，让神经元计算具备非线性的能力。</li>
+</ul>
+<p>多层连接：大量这样的节点按照不同的层次排布，形成多层的结构连接起来，即称为神经网络。</p>
+<p>前向计算：从输入计算输出的过程，顺序从前到后。</p>
+<p>计算图：以图形化的方式展现神经网络的计算逻辑又称为计算图。</p>
+<h1 id="使用Python和Numpy构建神经网络模型"><a href="#使用Python和Numpy构建神经网络模型" class="headerlink" title="使用Python和Numpy构建神经网络模型"></a>使用Python和Numpy构建神经网络模型</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/05/leetcode每日一题——最长重复子数组/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/05/leetcode每日一题——最长重复子数组/" itemprop="url">leetcode每日一题——最长重复子数组</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T14:28:46+08:00">2020-07-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given two integer arrays A and B,return the maximun length of an subarray that appears in both arrays</p>
+<p>给两个整数数组 <code>A</code> 和 <code>B</code> ，返回两个数组中公共的、长度最长的子数组的长度。</p>
+<p><strong>Example：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">A: [1,2,3,2,1]</span><br><span class="line">B: [3,2,1,4,7]</span><br><span class="line">输出：3</span><br><span class="line">解释：</span><br><span class="line">长度最长的公共子数组是 [3, 2, 1] 。</span><br></pre></td></tr></table></figure>
+<p><strong>难度：</strong>中等</p>
+<p>上手觉得题目好像不难，思路是让A数组不动，在B数组中找以当前A的指针指向的数字开头的公共子串，就是暴力搜索，结果超时了~/(ㄒoㄒ)/~~</p>
+<p>超时了的python解法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findLength(self, A: List[int], B: List[int]) -&gt; int:</span><br><span class="line">        i=0</span><br><span class="line">        maxlen=0</span><br><span class="line">        while i&lt;len(A):</span><br><span class="line">            j=0</span><br><span class="line">            while j&lt;len(B):</span><br><span class="line">                l=0</span><br><span class="line">                while i&lt;len(A) and j&lt;len(B) and A[i]==B[j]:</span><br><span class="line">                    j+=1</span><br><span class="line">                    i+=1</span><br><span class="line">                    l+=1 </span><br><span class="line">                j=j-l</span><br><span class="line">                i=i-l</span><br><span class="line">                maxlen=max(l,maxlen)</span><br><span class="line">                j+=1</span><br><span class="line">            i+=1</span><br><span class="line">        return maxlen</span><br></pre></td></tr></table></figure>
+<p>信心再一次崩塌，一看题解又是动态规划，LeetCode里中等难度以上是10道有9道都是动态规划？？</p>
+<p><img src="/2020/07/05/leetcode每日一题——最长重复子数组/1.jpg" alt></p>
+<p>感觉本科时候动态规划这就学的云里雾里的，看来是时候好好补一下，原理弄懂了面对其他动态规划的题目就得心应手多了。</p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/04/leetcode每日一题——最长有效括号/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/04/leetcode每日一题——最长有效括号/" itemprop="url">leetcode每日一题——最长有效括号</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-04T12:51:24+08:00">2020-07-04</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>给定一个只包含 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 的字符串，找出最长的包含有效括号的子串的长度。</p>
+<p><strong>难度</strong>：困难</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/04/leetcode每日一题——最长有效括号/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    <div>
+       
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2020/07/03/数学建模经验分享/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mumu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mumu's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/03/数学建模经验分享/" itemprop="url">数学建模经验分享</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-03T19:31:56+08:00">2020-07-03</time>
             
 
             
@@ -1004,511 +1554,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2018/11/25/人工智能复习第一章绪论/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mumu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mumu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/25/人工智能复习第一章绪论/" itemprop="url">人工智能之第一章绪论</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T16:34:17+08:00">2018-11-25</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是人工智能？"><a href="#什么是人工智能？" class="headerlink" title="什么是人工智能？"></a>什么是人工智能？</h2><p><strong>人工智能</strong>（Artificial Intelligence）是相对人的自然智能而言，即用人工的方法和技术，<strong>模仿、延伸、和扩展</strong>人的智能，实现某些“机器思维”。</p>
-<p>作为一门学科，人工智能研究智能行为的计算模型，研制具有感知、推理、学习、联想、决策等思维活动的计算系统，解决需要人类专家才能处理的复杂问题。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/25/人工智能复习第一章绪论/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    <div>
-       
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2018/10/07/pandas数据处理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mumu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mumu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/07/pandas数据处理/" itemprop="url">pandas数据处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-07T18:47:28+08:00">2018-10-07</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>用pandas进行数据处理的一些基本操作</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/07/pandas数据处理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    <div>
-       
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2018/10/07/函数图像绘制matplotlib/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mumu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mumu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/07/函数图像绘制matplotlib/" itemprop="url">python函数图像绘制(未完待续)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-07T11:31:13+08:00">2018-10-07</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>python进行函数图像绘制的方法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/07/函数图像绘制matplotlib/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    <div>
-       
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/2018/10/06/用sklearn进行主成分分析（PCA）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mumu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mumu's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/06/用sklearn进行主成分分析（PCA）/" itemprop="url">用sklearn进行主成分分析（PCA）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T20:04:50+08:00">2018-10-06</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="1、PCA介绍"><a href="#1、PCA介绍" class="headerlink" title="1、PCA介绍"></a>1、PCA介绍</h1><p>主成分分析（Principal Components Analysis），简称PCA，是一种数据降维技术，用于数据预处理。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/06/用sklearn进行主成分分析（PCA）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-    
-    <div>
-       
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1559,7 +1604,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1572,7 +1617,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
