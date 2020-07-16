@@ -78,7 +78,7 @@
 <meta name="description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta property="og:type" content="website">
 <meta property="og:title" content="&#39;about&#39;">
-<meta property="og:url" content="http://mumumuzi.github.io/about/index.html">
+<meta property="og:url" content="http://mumumuzi.github.io/blog/about/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
 <meta property="og:description" content="宇宙超级无敌美少女一枚~ 机器学习小硕 坐标河北">
 <meta property="og:locale" content="zh-Hans">
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="http://mumumuzi.github.io/about/">
+  <link rel="canonical" href="http://mumumuzi.github.io/blog/about/">
 
 
 
@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/mumumuzi.github.io/2020/07/05/leetcode每日一题——最长重复子数组/">
+    <link itemprop="mainEntityOfPage" href="http://mumumuzi.github.io/blog/mumumuzi.github.io/2020/07/05/leetcode每日一题——最长重复子数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mumu">
@@ -335,7 +335,7 @@
 <p>超时了的python解法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findLength(self, A: List[int], B: List[int]) -&gt; int:</span><br><span class="line">        i=0</span><br><span class="line">        maxlen=0</span><br><span class="line">        while i&lt;len(A):</span><br><span class="line">            j=0</span><br><span class="line">            while j&lt;len(B):</span><br><span class="line">                l=0</span><br><span class="line">                while i&lt;len(A) and j&lt;len(B) and A[i]==B[j]:</span><br><span class="line">                    j+=1</span><br><span class="line">                    i+=1</span><br><span class="line">                    l+=1 </span><br><span class="line">                j=j-l</span><br><span class="line">                i=i-l</span><br><span class="line">                maxlen=max(l,maxlen)</span><br><span class="line">                j+=1</span><br><span class="line">            i+=1</span><br><span class="line">        return maxlen</span><br></pre></td></tr></table></figure>
 <p>信心再一次崩塌，一看题解又是动态规划，LeetCode里中等难度以上是10道有9道都是动态规划？？</p>
-<p><img src="/mumumuzi.github.io/2020/07/05/leetcode每日一题——最长重复子数组/1.jpg" alt></p>
+<p><img src="/mumumuzi.github.io/blog/2020/07/05/leetcode每日一题——最长重复子数组/1.jpg" alt></p>
 <p>感觉本科时候动态规划这就学的云里雾里的，看来是时候好好补一下，原理弄懂了面对其他动态规划的题目就得心应手多了。</p>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2>
       
