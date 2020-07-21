@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Python,面试,">
 
 
 
@@ -75,17 +75,23 @@
 
 
 
-<meta name="description" content="Chance favors the prepared mind.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="&#39;categories&#39;">
-<meta property="og:url" content="https://MumumuZi.github.io/categories/index.html">
+<meta name="description" content="本博客持续更新整理关于面试时最容易被问到的一些关于Python的问题，虽然平时没少用，但是一关上电脑被问python的基本数据类型都说不全…">
+<meta name="keywords" content="Python,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python面试问题总结">
+<meta property="og:url" content="https://MumumuZi.github.io/2020/07/07/python面试问题总结/index.html">
 <meta property="og:site_name" content="mumu&#39;s blog">
-<meta property="og:description" content="Chance favors the prepared mind.">
+<meta property="og:description" content="本博客持续更新整理关于面试时最容易被问到的一些关于Python的问题，虽然平时没少用，但是一关上电脑被问python的基本数据类型都说不全…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T01:38:15.000Z">
+<meta property="og:image" content="https://mumumuzi.github.io/MumumuZi.github.io/2020/07/07/python面试问题总结/尴尬.jpg">
+<meta property="og:image" content="https://mumumuzi.github.io/MumumuZi.github.io/2020/07/07/python面试问题总结/1.png">
+<meta property="og:image" content="https://mumumuzi.github.io/MumumuZi.github.io/2020/07/07/python面试问题总结/2.png">
+<meta property="og:image" content="https://mumumuzi.github.io/MumumuZi.github.io/2020/07/07/python面试问题总结/3.png">
+<meta property="og:updated_time" content="2020-07-16T04:01:49.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;categories&#39;">
-<meta name="twitter:description" content="Chance favors the prepared mind.">
+<meta name="twitter:title" content="python面试问题总结">
+<meta name="twitter:description" content="本博客持续更新整理关于面试时最容易被问到的一些关于Python的问题，虽然平时没少用，但是一关上电脑被问python的基本数据类型都说不全…">
+<meta name="twitter:image" content="https://mumumuzi.github.io/MumumuZi.github.io/2020/07/07/python面试问题总结/尴尬.jpg">
 
 
 
@@ -117,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://MumumuZi.github.io/categories/">
+  <link rel="canonical" href="https://MumumuZi.github.io/2020/07/07/python面试问题总结/">
 
 
 
@@ -328,6 +334,7 @@
       
         <p>看了百度的飞桨官网的深度学习入门教程，整理一下笔记，不记下来仿佛就没装进脑子里🧠。</p>
 <p>飞桨是百度开发的一个高效和可扩展的深度学习框架，同时支持动态图和静态图。飞桨提供强大的深度学习并行技术，可以同时支持稠密参数和稀疏参数的超大规模深度学习并行训练，支持千亿规模参数和数百个节点的高效并行训练（摘自邱锡鹏教授的《神经网络与深度学习》，详见<a href="https://www.paddlepaddle.org.cn/" target="_blank" rel="noopener">飞桨官网</a>）。</p>
+<a id="more"></a>
 <h1 id="深度学习综述"><a href="#深度学习综述" class="headerlink" title="深度学习综述"></a>深度学习综述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>深度学习是机器学习的一个分支，是指一类<strong>问题</strong>以及解决这类问题的方法。首先深度学习是一个机器学习问题，指从有限样例中通过算法总结出一般性的规律，并可以应用到新的未知数据上。机器学习的本质是<strong>参数估计</strong>，在各种问题上，他们的学习目标都是拟合一个大公式。</p>
 <p><img src="/MumumuZi.github.io/2020/07/05/深度学习入门笔记/1.png" alt="机器学习拟合大公式"></p>
 <p>相比于传统的机器学习算法，两者在理论结构上是一致的，即模型假设、评价函数和优化算法（也就是统计学习方法里说的模型、策略和算法呗）。根本差别在于复杂度的不同，深度学习采用的模型一般比较复杂，输入数据和输出目标之间的数据会经过多个线性或非线性的<strong>组件</strong>，每个组件都会对信息进行加工并且影响后续的组件。这里的组件也就是神经网络中的<strong>层</strong>。</p>
@@ -341,7 +348,8 @@
 <p>多层连接：大量这样的节点按照不同的层次排布，形成多层的结构连接起来，即称为神经网络。</p>
 <p>前向计算：从输入计算输出的过程，顺序从前到后。</p>
 <p>计算图：以图形化的方式展现神经网络的计算逻辑又称为计算图。</p>
-<h1 id="使用Python和Numpy构建神经网络模型"><a href="#使用Python和Numpy构建神经网络模型" class="headerlink" title="使用Python和Numpy构建神经网络模型"></a>使用Python和Numpy构建神经网络模型</h1>
+<h1 id="使用Python和Numpy构建神经网络模型"><a href="#使用Python和Numpy构建神经网络模型" class="headerlink" title="使用Python和Numpy构建神经网络模型"></a>使用Python和Numpy构建神经网络模型</h1><p>待续。。。</p>
+
       
     </div>
     
@@ -472,7 +480,7 @@
               
                 <a href="/MumumuZi.github.io/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -485,7 +493,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/MumumuZi.github.io/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
